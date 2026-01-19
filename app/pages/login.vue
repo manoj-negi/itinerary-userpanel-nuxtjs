@@ -1,7 +1,22 @@
 <template>
-  <div class="max-w-md mx-auto mt-16 bg-white dark:bg-slate-900 rounded-2xl shadow-sm p-8">
-    <h1 class="text-2xl font-bold mb-6">Log in</h1>
-
+  <div class="max-w-md mx-auto bg-white dark:bg-slate-900 rounded-2xl shadow-sm p-8">
+    <div class="flex items-center justify-between mb-6">
+      <h1 class="text-2xl font-bold">Log in</h1>
+      <NuxtLink
+        to="/"
+        class="inline-flex items-center gap-2 rounded-full
+              bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-700
+              border border-slate-200 dark:border-slate-700
+              px-4 py-2
+              text-sm font-semibold text-slate-900 dark:text-slate-100
+              transition-all hover:scale-105 shadow-sm hover:shadow-md"
+      >
+        <svg class="w-4 h-4 text-slate-600 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+        </svg>
+        Back to Home
+      </NuxtLink>
+    </div>
     <div v-if="status.message" :class="statusClasses" class="mb-4 text-xs rounded-lg px-3 py-2">{{ status.message }}</div>
 
     <form class="space-y-4" @submit.prevent="submitLogin">
