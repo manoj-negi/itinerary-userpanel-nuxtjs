@@ -44,6 +44,7 @@
 import { navigateTo } from '#app'
 
 const { setAuth } = useAuth()
+const route = useRoute()
 const form = reactive({
   email: '',
   password: ''
@@ -122,6 +123,11 @@ const submitLogin = async () => {
     status.type = 'success'
     status.message = 'Login successful. Redirecting...'
 
+    const route = useRoute()
+    const redirectUrl = route.query.redirect
+    if (redirectUrl) {
+      return await navigateTo(decodeURIComponent(String(redirectUrl)))
+    }
     await navigateTo('/')
   } catch (err) {
     console.error('Network error:', err)

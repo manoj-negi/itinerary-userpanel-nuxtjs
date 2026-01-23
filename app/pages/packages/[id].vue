@@ -137,6 +137,7 @@
 
 <script setup>
 const route = useRoute()
+const { token } = useAuth()
 const packageId = computed(() => String(route.params.id))
 
 const loading = ref(true)
@@ -235,8 +236,16 @@ const load = async () => {
 
 watch(() => route.params.id, load, { immediate: true })
 
-const bookNow = () => {
-  console.log('Book package:', pkg.value)
-  // navigateTo('/bookings/' + pkg.value.id) or open modal
+const bookNow = async () => {
+  const id = pkg.value?.id
+  if (!id) return
+  
+  // Simple check: token exists = logged in
+  if (!token.value) {
+    return navigateTo(`/login?redirect=/bookings/${id}`)
+  }
+  
+  await navigateTo(`/bookings/${id}`)
 }
+
 </script>

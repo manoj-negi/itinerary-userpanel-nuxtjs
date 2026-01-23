@@ -169,6 +169,7 @@
 
 <script setup>
 const route = useRoute()
+const { token } = useAuth()
 
 const tourId = computed(() => String(route.params.id))
 
@@ -275,10 +276,16 @@ const selectPackage = (pkg) => {
   selectedPackage.value = pkg
 }
 
-const bookNow = () => {
-  if (selectedPackage.value) {
-    navigateTo(`/packages/${selectedPackage.value.id}`)  // Direct to package page
+const bookNow = async () => {
+  const id = selectedPackage.value?.id
+  if (!id) return
+  
+  // Simple check: token exists = logged in
+  if (!token.value) {
+    return navigateTo(`/login?redirect=/bookings/${id}`)
   }
+  
+  await navigateTo(`/bookings/${id}`)
 }
 
 const goToPackage = (pkg) => {

@@ -90,15 +90,28 @@
             </button>
             -->
           </template>
-          
+
           <template v-else>
+            <NuxtLink to="/support" class="text-md font-bold text-purple-600">
+              Need Help?
+            </NuxtLink>
+
+            <div class="h-6 w-px bg-slate-300 dark:bg-slate-700"></div>
+
             <button
-              class="inline-flex items-center justify-center h-9 w-9 rounded-full border border-slate-200 dark:border-slate-700 bg-white/80 dark:bg-slate-800/80 text-slate-700 dark:text-slate-100 shadow-sm hover:bg-slate-100 dark:hover:bg-slate-700 transition"
+              class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold
+                    border border-slate-200 dark:border-slate-700
+                    bg-white dark:bg-slate-800
+                    text-slate-700 dark:text-slate-100
+                    shadow-md hover:shadow-lg
+                    hover:bg-slate-50 dark:hover:bg-slate-700
+                    transition"
               @click="toggleTheme"
-              title="Toggle dark mode"
             >
-              <span v-if="colorMode.value === 'dark'">☀</span>
-              <span v-else>🌙</span>
+              <span class="text-base leading-none">
+                {{ colorMode.value === 'dark' ? '☀' : '🌙' }}
+              </span>
+              {{ colorMode.value === 'dark' ? 'Light Mode' : 'Dark Mode' }}
             </button>
 
             <div class="flex items-center gap-4">
