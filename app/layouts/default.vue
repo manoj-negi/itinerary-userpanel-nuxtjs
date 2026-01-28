@@ -210,34 +210,12 @@
             <NuxtLink to="/tourDetails" class="flex items-center gap-1 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
               Destination
             </NuxtLink>
-            <NuxtLink to="/packages" class="flex items-center gap-1 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-              Travel Package
-            </NuxtLink>
             <NuxtLink to="/visa" class="flex items-center gap-1 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
               Visa
-            </NuxtLink>
-            <NuxtLink to="/pages" class="flex items-center gap-1 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
-              Pages
             </NuxtLink>
             <NuxtLink to="/contact" class="px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
               Contact
             </NuxtLink>
-        </div>
-
-        <div class="flex items-center gap-3">
-          <a
-            href="https://wa.me/919345533865"
-            class="px-4 py-2 text-sm font-semibold text-white bg-emerald-600 rounded-lg hover:bg-emerald-700 shadow-sm transition inline-flex items-center gap-2"
-          >
-            WhatsApp
-          </a>
-
-          <a
-            href="tel:+919345533865"
-            class="px-4 py-2 text-sm font-semibold text-slate-700 dark:text-slate-100 border border-slate-300 dark:border-slate-600 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition inline-flex items-center gap-2"
-          >
-            +91 345 533 865
-          </a>
         </div>
       </nav>
     </div>
