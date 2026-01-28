@@ -207,7 +207,7 @@
             <NuxtLink to="/" class="flex items-center gap-1 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
               Home
             </NuxtLink>
-            <NuxtLink to="/destinations" class="flex items-center gap-1 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
+            <NuxtLink to="/tourDetails" class="flex items-center gap-1 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
               Destination
             </NuxtLink>
             <NuxtLink to="/packages" class="flex items-center gap-1 px-4 py-3 rounded-lg hover:bg-slate-100 dark:hover:bg-slate-800 transition">
